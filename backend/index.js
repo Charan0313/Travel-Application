@@ -9,7 +9,6 @@ const cors = require("cors");
 
 const userRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
-const postRoutes = require('./routes/post');
 
 const fileparser = require('./config/parseFile');
 
@@ -33,7 +32,6 @@ app.get('/api/v1/', (req, res) => {
 
 app.use('/api/v1/auth', userRoutes);
 app.use('/api/v1/profile', profileRoutes);
-app.use('/api/v1/post', postRoutes);
 
 connectToDatabase();
 
