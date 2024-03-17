@@ -4,7 +4,6 @@ class MyBus extends StatelessWidget {
   final String operatorName;
   final String departureTime;
   final String duration;
-  final double ticketPrice;
   final String imageUrl;
 
   const MyBus({
@@ -12,7 +11,6 @@ class MyBus extends StatelessWidget {
     required this.operatorName,
     required this.departureTime,
     required this.duration,
-    required this.ticketPrice,
     required this.imageUrl,
   }) : super(key: key);
 
@@ -20,27 +18,19 @@ class MyBus extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 2,
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
       child: InkWell(
         onTap: () {
-          // Handle tap on the entire card, like showing more details
         },
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Colors.blue.shade200,
-                Colors.blue.shade100,
-              ],
-            ),
+            color: Colors.blue.shade200, 
           ),
           child: ListTile(
             leading: Container(
-              width: 80,
-              height: 80,
+              width: 70,
+              height: 70,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.0),
                 image: DecorationImage(
@@ -51,26 +41,24 @@ class MyBus extends StatelessWidget {
             ),
             title: Text(
               operatorName,
-              style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 4),
-                Text('Departure Time: $departureTime', style: const TextStyle(color: Colors.white)),
-                Text('Duration: $duration', style: const TextStyle(color: Colors.white)),
-                Text('Ticket Price: $ticketPrice', style: const TextStyle(color: Colors.white)),
+                Text(
+                  'Departure Time: $departureTime',
+                  style: const TextStyle(color: Colors.white),
+                ),
+                Text(
+                  'Duration: $duration',
+                  style: const TextStyle(color: Colors.white),
+                ),
               ],
-            ),
-            trailing: ElevatedButton(
-              onPressed: () {
-
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.white),
-                foregroundColor: MaterialStateProperty.all(Colors.blue),
-              ),
-              child: const Text('Book Now'),
             ),
           ),
         ),

@@ -50,11 +50,9 @@ class _SearchScreenState extends State<SearchScreen> {
                     operatorName: 'Bus Operator',
                     departureTime: '10:00 AM',
                     duration: '4 hours',
-                    ticketPrice: 20.0,
                     imageUrl:
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD494DImPKg6lVywgMlfA0N_-QKit_zobQ6w&usqp=CAU',
                   ),
-                  // Add more MyBus widgets here if needed
                 ],
               ),
             ),
